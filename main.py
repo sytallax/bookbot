@@ -2,9 +2,15 @@ from typing import Counter, Dict
 
 
 def main():
-    with open("books/frankenstein.txt") as f:
-        file_contents = f.read()
-        print(get_book_letter_count(file_contents))
+    filepath = "books/frankenstein.txt"
+    frankenstein = get_book_text(filepath)
+    print(get_book_letter_count(frankenstein))
+
+
+def get_book_text(filepath: str) -> str:
+    """Open a text file and return the file as a string."""
+    with open(filepath) as f:
+        return f.read()
 
 
 def get_book_word_count(book: str) -> int:
